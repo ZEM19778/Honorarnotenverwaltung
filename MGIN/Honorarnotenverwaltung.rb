@@ -68,9 +68,9 @@ while eingabe != ""
   end
   #Eine Honorarnote löschen
   if Integer(eingabe) == 4
-    puts "Welche ID hat die Honorarnote, die gelöscht werden soll? "
+    puts "An welcher Stelle der Liste steht die Honorarnote, die gelöscht werden soll? "
     deleteID = Integer(gets.chomp!) - 1
-    honorarnoten.delete(deleteID)
+    honorarnoten.delete_at(deleteID)
     puts "Die Honorarnote wurde gelöscht"
   end
 end
