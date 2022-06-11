@@ -16,11 +16,13 @@ while eingabe != ""
     if honorarnoten.empty?
       puts "Es sind noch keine Honorarnoten eingetragen"
     else
-      puts "Welche ID hat Ihre Honorarnote?: "
-      eingabeID = Integer(gets.chomp!)
+      puts "An welcher Stelle der Liste steht die Honorarnote?: "
+      eingabeID = Integer(gets.chomp!)-1
       puts honorarnoten[eingabeID]
     end
   end
+  #Honorarnote hinzufügen
+  #Damit das ID-System Sinn macht, einfach 4 nehmen bei der ersten Honorarnote, die man hinzufügt, 5 bei der nächsten, usw.
   if Integer(eingabe) == 2
     puts "Welche ID soll Ihre Honorarnote haben?: "
     neuID = Integer(gets.chomp!)
@@ -31,10 +33,44 @@ while eingabe != ""
     i = honorarnoten.length
     honorarnoten[i] = [neuID,neuLeistung,neuPreis]
   end
+  #Honorarnote wird bearbeitet
   if Integer(eingabe) == 3
-
+    puts "Welche Honorarnote soll bearbeitet werden?"
+    i = Integer(gets.chomp!)
+    puts "Was wollen Sie ändern [ID, Leistung, Preis, Alles]?"
+    inputChange = gets.chomp!
+    if inputChange == "ID"
+      puts "Worauf soll die ID geändert werden? "
+      changeID = Integer(gets.chomp!)
+      honorarnoten[i-1][0] = changeID
+    end
+    if inputChange == "Leistung"
+      puts "Worauf soll die Leistung geändert werden? "
+      changeLeistung = gets.chomp!
+      honorarnoten[i-1][1] = changeLeistung
+    end
+    if inputChange == "Preis"
+      puts "Worauf soll der Preis geändert werden? "
+      changePreis = gets.chomp!
+      honorarnoten[i-1][2] = changePreis
+    end
+    if inputChange == "Alles"
+      puts "Worauf soll die ID geändert werden? "
+      changeID = Integer(gets.chomp!)
+      honorarnoten[i-1][0] = changeID
+      puts "Worauf soll die Leistung geändert werden? "
+      changeLeistung = gets.chomp!
+      honorarnoten[i-1][1] = changeLeistung
+      puts "Worauf soll der Preis geändert werden? "
+      changePreis = gets.chomp!
+      honorarnoten[i-1][2] = changePreis
+    end
   end
+  #Eine Honorarnote löschen
   if Integer(eingabe) == 4
-
+    puts "Welche ID hat die Honorarnote, die gelöscht werden soll? "
+    deleteID = Integer(gets.chomp!) - 1
+    honorarnoten.delete(deleteID)
+    puts "Die Honorarnote wurde gelöscht"
   end
 end
