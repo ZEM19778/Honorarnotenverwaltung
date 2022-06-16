@@ -74,7 +74,7 @@ while eingabe != ""
       honorarnoten[i-1][2] = changePreis
       puts "Worauf soll die Dauer geändert werden? "
       changeDauer = gets.chomp!
-      honorarnoten[i-1][3] = changePreis
+      honorarnoten[i-1][3] = changeDauer
     end
   end
   #Eine Honorarnote löschen
