@@ -30,14 +30,16 @@ while eingabe != ""
     neuLeistung = gets.chomp!
     puts "Wie viel hat die Leistung gekostet?: "
     neuPreis = gets.chomp!
+    puts "Wie lange hat die Leistung gedauert?: "
+    neuDauer = gets.chomp!
     i = honorarnoten.length
-    honorarnoten[i] = [neuID,neuLeistung,neuPreis]
+    honorarnoten[i] = [neuID,neuLeistung,neuPreis,neuDauer]
   end
   #Honorarnote wird bearbeitet
   if Integer(eingabe) == 3
     puts "Welche Honorarnote soll bearbeitet werden?"
     i = Integer(gets.chomp!)
-    puts "Was wollen Sie ändern [ID, Leistung, Preis, Alles]?"
+    puts "Was wollen Sie ändern [ID, Leistung, Preis, Dauer, Alles]?"
     inputChange = gets.chomp!
     if inputChange == "ID"
       puts "Worauf soll die ID geändert werden? "
@@ -52,7 +54,12 @@ while eingabe != ""
     if inputChange == "Preis"
       puts "Worauf soll der Preis geändert werden? "
       changePreis = gets.chomp!
-      honorarnoten[i-1][2] = changePreis
+      honorarnoten[i-1][2] = changePreis  
+    end
+    if inputChange == "Dauer"
+      puts "Worauf soll die Dauer geändert werden? "
+      changeDauer = gets.chomp!
+      honorarnoten[i-1][3] = changeDauer
     end
     if inputChange == "Alles"
       puts "Worauf soll die ID geändert werden? "
@@ -64,6 +71,9 @@ while eingabe != ""
       puts "Worauf soll der Preis geändert werden? "
       changePreis = gets.chomp!
       honorarnoten[i-1][2] = changePreis
+      puts "Worauf soll die Dauer geändert werden? "
+      changeDauer = gets.chomp!
+      honorarnoten[i-1][3] = changeDauer
     end
   end
   #Eine Honorarnote löschen
