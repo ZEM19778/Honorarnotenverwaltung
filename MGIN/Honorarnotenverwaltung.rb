@@ -12,9 +12,6 @@ while eingabe != ""
   #Überprüfen
   if Integer(eingabe) != 1 && Integer(eingabe) != 2 && Integer(eingabe) != 3 && Integer(eingabe) != 4
     puts "Ihre Eingabe ist ungültig"
-    rescue
-      puts $!, $@
-      next    # do_something_* again, with the next i
   end
   if Integer(eingabe) == 1
     if honorarnoten.empty?
